@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>LIMITE URBANO RURAL - Ordenanza 013-17.kmz</name>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>4</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>4</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>LIMITE URBANO RURAL - Ordenanza 013-17</name>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				-67.12023590714351,-39.08895951799299,0 -67.12132535150894,-39.09280649330817,0 -67.11654631876878,-39.09152135949128,0 -67.10935437564672,-39.09257760667058,0 -67.11149674799385,-39.10142371662158,0 -67.1000060400885,-39.10313563529258,0 -67.10365094900143,-39.1180841781367,0 -67.09791073431713,-39.1189892680071,0 -67.09757692524488,-39.11745564015827,0 -67.09180798008936,-39.11828516608772,0 -67.09141868090744,-39.1165159603897,0 -67.08938721074077,-39.11678080420283,0 -67.08871266914562,-39.1140200978535,0 -67.07919044545962,-39.11545984900872,0 -67.07901833325836,-39.11472956224356,0 -67.07559330694819,-39.11578857036454,0 -67.07455950255078,-39.11184811637088,0 -67.07089014063672,-39.11031680198145,0 -67.0714255262908,-39.11266836460811,0 -67.06887642974554,-39.11299223934387,0 -67.06827203020917,-39.11009005989288,0 -67.06612261896484,-39.11042316290094,0 -67.06588150792048,-39.1096244889733,0 -67.06414156826527,-39.10979247219726,0 -67.06287496741085,-39.11005690891536,0 -67.06263978169697,-39.10892372841536,0 -67.06347880222639,-39.10759040746461,0 -67.06551111486401,-39.10737623829578,0 -67.0641363971709,-39.10183939032577,0 -67.06333441671299,-39.10202898440021,0 -67.06283423582927,-39.10212459720378,0 -67.06083070970436,-39.10170488308895,0 -67.06064161644306,-39.10017213298771,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+
+    <title>Oficina de Estadísticas Local</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <!-- Morris Charts CSS -->
+    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- DataTables CSS -->
+    <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+    <!-- DataTables Responsive CSS -->
+    <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+    <link href="../css/ol3-layerswitcher.css" rel="stylesheet">
+    <script src="../js/raphael.js"></script>
+    <script src="../js/justgage.js"></script>
+
+    <!-- CSS PROPIOS Fonts -->
+   <link rel="stylesheet" href="https://openlayers.org/en/v4.1.1/css/ol.css" type="text/css">
+   <script src="https://openlayers.org/en/v4.1.1/build/ol.js" type="text/javascript"></script>
+   <script src="../js/ol3-layerswitcher.js" type="text/javascript"></script>
+   
+    <!-- Cargamos las Bases de Datos como objetos json -->
+   <script src="../bases/m_capas.js" type="text/javascript"></script>
+   <script src="../bases/historial.js" type="text/javascript"></script>
+   <script src="../bases/ETAPAS.js" type="text/javascript"></script>
+
+   <link rel="stylesheet" href="../css/valentin.css" type="text/css" media="all">   
+
+<script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+    <script src="../js/liquidFillGauge.js" language="JavaScript"></script>
+    <style>
+        .liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
+
+ul.etapas {
+  margin: 0;
+  padding: 0;  
+  list-style-type: none;
+
+}
+
+ul.etapas li {
+  cursor: hand;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background: #eee;
+  font-size: 12px;
+  transition: 0.1s;
+  
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Darker background-color on hover */
+ul.etapas li:hover {
+  background: #ddd;
+}
+/* When clicked on, add a background color and strike out text */
+ul.etapas li.checked {
+  background: #088A08;
+  color: #fff;
+}
+
+/* Add a "checked" mark when clicked on */
+ul.etapas li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 12px;
+  width: 7px;
+}    
+
+#info {
+        position: absolute;
+        height: 1px;
+        width: 1px;
+        z-index: 100;
+}
+      .tooltip.in {
+        opacity: 1;
+      }
+      .tooltip.top .tooltip-arrow {
+        border-top-color: white;
+      }
+      .tooltip-inner {
+        border: 2px solid white;
+      }
+
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  font-size: small;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+</style>
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Oficina de Estadísticas Local</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <!-- /.dropdown-messages -->
+                </li>   
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> Perfil de Usuario</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configuración</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesión</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                         <li>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Institucional</a>
+                        </li>
+                         <li>
+                            <a href="sociodemo.html"><i class="fa fa-dashboard fa-fw"></i> Sociodemografía</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Territorialidad Urbana<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="deficit.html">Deficit Habitacional</a>
+                                </li>
+                                <li>
+                                    <a href="urbaniza.html">Urbanizaciones en Curso</a>
+                                </li>
+
+                                <li>
+                                    <a href="suelo.html">Uso de Suelo</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="rural.html"><i class="fa fa-table fa-fw"></i> Territoralidad Rural</a>
+                        </li>
+                                                
+                    </ul>
+                     <br/>
+                     <center>
+                     <a href="estadistica@villaregina.gob.ar">estadistica@villaregina.gob.ar</a>
+                     </center>
+                     <br/>
+                     <div id="outer" align="center" >
+                     <img src="../WWW/MUNI.png" /> 
+                      </div>
+                     <br/>
+                     <div id="outer2" align="center" >
+                     <img src="../WWW/UNCOMA.png" /> 
+                      </div>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+         
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Urbanizaciones en Curso
+                        </div>
+                        <div class="panel-body">
+                        <!-- / INICIO DEL TEXTO -->
+     <div style="width:100%; height:100%" id="map"></div>
+     <div id="info"></div><
+          <br>
+          <div class="col-lg-9" id="L_detalla">
+           <div class="panel panel-default" >                        
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table" id="detalla">
+                                    <thead>
+                                        <tr>
+                                            <td>Código</td>
+                                            <td>Entidad</td>
+                                            <td>Estado</td>
+                                            <td>Denominación</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="success">
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+           </div>
+      
+                   <div class="col-lg-3 col-md-6" id="adjudica">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-users fa-4x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div id="N_adjudica"class="huge"> </div>
+                                    <div id="T_adjudica"> </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+          </div>
+
+          </div>
+
+<div class="col-lg-6" id="L_etapas">
+   <div class="panel panel-primary">
+      <div class="panel-heading" id="TI_L_etapas">
+      </div>
+      <div class="panel-body">
+        <ul id="my_lu" class="etapas">
+
+        </ul>
+      </div>
+   </div>
+</div>
+
+<div class="col-lg-3" id="PAGO1">
+   <div class="panel panel-green">
+      <div class="panel-heading" id="T_PAGO1">
+      </div>
+      <div class="panel-body">
+       <svg id="fillgauge1" width="100%" height="200" ></svg>
+      </div>
+   </div>
+</div>
+
+<div class="col-lg-3" id="PAGO2">
+   <div class="panel panel-green">
+      <div class="panel-heading" id="T_PAGO2">          
+      </div>
+      <div class="panel-body">
+       <svg id="fillgauge2" width="100%" height="200" ></svg>
+      </div>
+   </div>
+</div>
+
+<div class="col-lg-12" id="comentarios">
+            <div class="chat-panel panel panel-default">
+              <div class="panel-body">
+               <ul class="chat" id="historial">                        
+               </ul>
+              </div>
+            </div>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+
+                        <!-- / FIN DEL TEXTO -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <!-- Morris Charts JavaScript -->
+    <script src="../vendor/raphael/raphael.min.js"></script>
+    <script src="../vendor/morrisjs/morris.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+<!-- Codigo Necesario para las Aplicaciones- PROPIO -->
+ <script src="../js/Valentin.js" type="text/javascript"></script>
+</body>
+
+</html>

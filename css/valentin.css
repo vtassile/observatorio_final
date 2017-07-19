@@ -1,0 +1,46 @@
+H2 {
+  font-weight: 500;
+  line-height: 1.1;
+  color: #ad1d28;
+}
+
+H3 {
+  font-weight: 500;
+  line-height: 1.1;
+  color: #ad1d28;
+}
+
+H4 {
+  font-weight: 500;
+  line-height: 1.1;
+  color: #ad1d28;
+}
+
+body {
+  background-color: #F8F8FF;
+}
+
+table {
+       border:1px blank red;
+       border-collapse:separate; 
+       border-spacing:5px; 
+       width:530px; 
+       height:auto; 
+       color:blank; 
+       text-align:center; 
+       } 
+
+th, td {
+       border:1px solid blank;
+       } 
+       
+ thead, tfoot {
+       background-color:#06DEF8; 
+       color:white; 
+       font-family:"Arial Black", sans-serif;
+       } 
+
+    tr.color {
+       background-color:#525151; 
+       }        
+

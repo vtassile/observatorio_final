@@ -1,0 +1,35 @@
+CODIGO,TIPO,TITULO,DETALLE,FINALIZADO,VALOR,T_VALOR
+C306,SERVICIOS,Servicios Municipales Vigentes,Barrido y Limpieza,SI,,RELATIVO
+C316,CONTRATO,Avance de los Items Contemplados en el Pago de la Cuota,Apertura-Enripiado-Nivelación de Calles,SI,,RELATIVO
+C316,CONTRATO,Avance de los Items Contemplados en el Pago de la Cuota,Red de Agua Corriente,SI,,RELATIVO
+C316,CONTRATO,Avance de los Items Contemplados en el Pago de la Cuota,Alumbrado Público (Luminarias en las esquinas),SI,,RELATIVO
+C316,CONTRATO,Avance de los Items Contemplados en el Pago de la Cuota,Electrificación Domiciliaria,SI,,RELATIVO
+C316,INVOLUCRADOS,Adjudicatarios,,,119,ABSOLUTO
+C316,PAGO1,Recaudación,,,89,16,RELATIVO
+C306,INVOLUCRADOS,Adjudicatarios,,,53,ABSOLUTO
+C306,PAGO1,Recaudación-TERRENO,,,23,74,RELATIVO
+C306,PAGO2,Recaudación-SERVICIOS,,,73,53,RELATIVO
+C320,CONTRATO,Avance de los Items Contemplados en el Pago de la Cuota,Agua,NO,,RELATIVO
+C320,CONTRATO,Avance de los Items Contemplados en el Pago de la Cuota,Luz,NO,,RELATIVO
+C320,CONTRATO,Avance de los Items Contemplados en el Pago de la Cuota,Cloacas,NO,,RELATIVO
+C320,INVOLUCRADOS,Adjudicatarios,,,78,ABSOLUTO
+C320,PAGO1,Recaudación,,,20,89,RELATIVO
+C319,CONTRATO,Avance de los Items Contemplados en el Pago de la Cuota,Agua,NO,,RELATIVO
+C319,CONTRATO,Avance de los Items Contemplados en el Pago de la Cuota,Luz,NO,,RELATIVO
+C319,CONTRATO,Avance de los Items Contemplados en el Pago de la Cuota,Cloacas,NO,,RELATIVO
+C319,INVOLUCRADOS,Adjudicatarios,,,91,ABSOLUTO
+C319,PAGO1,Recaudación,,,17,14,RELATIVO
+C317,CONTRATO,Avance de los Items Contemplados en el Pago de la Cuota,Red de Agua Corriente,NO,,RELATIVO
+C317,CONTRATO,Avance de los Items Contemplados en el Pago de la Cuota,Red de Energía Eléctrica Domiciliaria,NO,,RELATIVO
+C317,CONTRATO,Avance de los Items Contemplados en el Pago de la Cuota,Red de Cloacas,NO,,RELATIVO
+C317,CONTRATO,Avance de los Items Contemplados en el Pago de la Cuota,Apertura-Enripiado-Nivelación de Calles,NO,,RELATIVO
+C317,CONTRATO,Avance de los Items Contemplados en el Pago de la Cuota,Alumbrado Público (Luminarias en las esquinas),NO,,RELATIVO
+C317,INVOLUCRADOS,Adjudicatarios,,,149,ABSOLUTO
+C317,PAGO1,Recaudación,,,85,26,RELATIVO
+C318,CONTRATO,Avance de los Items Contemplados en el Pago de la Cuota,Red de Agua Corriente,NO,,RELATIVO
+C318,CONTRATO,Avance de los Items Contemplados en el Pago de la Cuota,Red de Energía Eléctrica Domiciliaria,NO,,RELATIVO
+C318,CONTRATO,Avance de los Items Contemplados en el Pago de la Cuota,Red de Cloacas,NO,,RELATIVO
+C318,CONTRATO,Avance de los Items Contemplados en el Pago de la Cuota,Apertura-Enripiado-Nivelación de Calles,NO,,RELATIVO
+C318,CONTRATO,Avance de los Items Contemplados en el Pago de la Cuota,Alumbrado Público (Luminarias en las esquinas),NO,,RELATIVO
+C318,INVOLUCRADOS,Adjudicatarios,,,128,ABSOLUTO
+C318,PAGO1,Recaudación,,,82,86,RELATIVO
