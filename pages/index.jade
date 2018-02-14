@@ -1,0 +1,153 @@
+
+doctype html
+head
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    meta(http-equiv='content-type', content='text/html; charset=UTF-8')
+    title Oficina de Estad&iacute;sticas Local
+    // Bootstrap Core CSS
+    link(href='../vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    // MetisMenu CSS
+    link(href='../vendor/metisMenu/metisMenu.min.css', rel='stylesheet')
+    // Custom CSS
+    link(href='../dist/css/sb-admin-2.css', rel='stylesheet')
+    // Morris Charts CSS
+    link(href='../vendor/morrisjs/morris.css', rel='stylesheet')
+    // Custom Fonts
+    link(href='../vendor/font-awesome/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+    // CSS PROPIOS Fonts
+    link(rel='stylesheet', href='../css/valentin.css', type='text/css', media='all')
+    style.
+        .carousel, .carousel-inner > .item > img {
+        width:85%;
+        height: 400px;
+        }
+#wrapper
+    // Navigation
+    nav.navbar.navbar-default.navbar-static-top(role='navigation', style='margin-bottom: 0')
+        .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            a.navbar-brand(href='index.html') Oficina de Estad&iacute;sticas Local
+        // /.navbar-header
+        ul.nav.navbar-top-links.navbar-right
+            li.dropdown
+                // /.dropdown-messages
+            // /.dropdown
+            li.dropdown
+                a.dropdown-toggle(data-toggle='dropdown', href='#')
+                    i.fa.fa-user.fa-fw
+                    i.fa.fa-caret-down
+                ul.dropdown-menu.dropdown-user
+                    li
+                        a(href='#')
+                            i.fa.fa-user.fa-fw
+                    li
+                        a(href='#')
+                            i.fa.fa-gear.fa-fw
+                    li.divider
+                    li
+                        a(href='login.html')
+                            i.fa.fa-sign-out.fa-fw
+                // /.dropdown-user
+            // /.dropdown
+        // /.navbar-top-links
+        .navbar-default.sidebar(role='navigation')
+            .sidebar-nav.navbar-collapse
+                ul#side-menu.nav
+                    li
+                        a(href='index.html')
+                            i.fa.fa-dashboard.fa-fw
+                    li
+                        a(href='sociodemo.html')
+                            i.fa.fa-dashboard.fa-fw
+                    li
+                        a(href='#')
+                            i.fa.fa-bar-chart-o.fa-fw
+                            span.fa.arrow
+                        ul.nav.nav-second-level
+                            li
+                                a(href='deficit.html') Deficit Habitacional
+                            li
+                                a(href='urbaniza.html') Urbanizaciones en Curso
+                            li
+                                a(href='suelo.html') Uso de Suelo
+                        // /.nav-second-level
+                    li
+                        a(href='rural.html')
+                            i.fa.fa-table.fa-fw
+                br
+                center
+                    a(href='estadistica@villaregina.gob.ar') estadistica@villaregina.gob.ar
+                br
+                #outer(align='center')
+                    img(src='../WWW/MUNI.png')
+                br
+                #outer2(align='center')
+                    img(src='../WWW/UNCOMA.png')
+            // /.sidebar-collapse
+        // /.navbar-static-side
+    #page-wrapper
+        .row
+            .col-lg-12
+                .panel.panel-default
+                    .panel-heading
+                    .panel-body
+                        // / INICIO DEL TEXTO
+                        h2 QUIENES SOMOS
+                        p
+                            b OFICINA DE ESTAD&Iacute;STICA LOCAL (OEL)
+                            b DIRECCI&Oacute;N DE PLANIFICACI&Oacute;N URBANA
+                        .container
+                            #myCarousel.carousel.slide(data-ride='carousel')
+                                // Indicators
+                                ol.carousel-indicators
+                                    li.active(data-target='#myCarousel', data-slide-to='0')
+                                    li(data-target='#myCarousel', data-slide-to='1')
+                                    li(data-target='#myCarousel', data-slide-to='2')
+                                    li(data-target='#myCarousel', data-slide-to='3')
+                                // Wrapper for slides
+                                .carousel-inner
+                                    .item.active
+                                        img.img-responsive(src='../WWW/ACUERDO.png', alt='Responsive image')
+                                    .item
+                                        img.img-responsive(src='../WWW/MANZANA2.jpg', alt='Responsive image')
+                                    .item
+                                        img.img-responsive(src='../WWW/REUNION_1_2.png', alt='Responsive image')
+                                    .item
+                                        img.img-responsive(src='../WWW/MANZANA.jpg', alt='Responsive image')
+                        h2 QUE NOS PROPONEMOS
+                        p
+                            b OFICINA DE ESTAD&Iacute;STICA LOCAL
+                        h2 NUESTRA MISI&Oacute;N
+                        p
+                        h2 NUESTROS OBJETIVOS
+                        p
+                            ul
+                                li Relevar y Procesar Informaci&oacute;n Sociodemogr&aacute;fica
+                                li Relevar y Procesar Informaci&oacute;n Territorial Urbana
+                                li Relevar y Procesar Informaci&oacute;n Territorial Rural
+                                li Generar una Aplicaci&oacute;n Web con Capacidad de Georeferenciaci&oacute;n
+                        // / FIN DEL TEXTO
+                    // /.panel-body
+                // /.panel
+            // /.col-lg-12
+        // /.row
+    // /#page-wrapper
+// /#wrapper
+// jQuery
+script(src='../vendor/jquery/jquery.min.js')
+// Bootstrap Core JavaScript
+script(src='../vendor/bootstrap/js/bootstrap.min.js')
+// Metis Menu Plugin JavaScript
+script(src='../vendor/metisMenu/metisMenu.min.js')
+// Morris Charts JavaScript
+script(src='../vendor/raphael/raphael.min.js')
+script(src='../vendor/morrisjs/morris.min.js')
+// Custom Theme JavaScript
+script(src='../dist/js/sb-admin-2.js')
